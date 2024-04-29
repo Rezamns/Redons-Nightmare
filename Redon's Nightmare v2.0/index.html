@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Redon's Nightmare</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" href="./Assets/icon.jpg" type="image/x-icon">
+
+<style>
+body,h2,h3,h4,h5,h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("./Assets/wallpaper.jpg");
+  min-height: 100%;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+
+.logo {
+  height: 60px;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: black;
+  background-color: rgb(219, 214, 214) ;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {
+  background-color: rgb(42, 42, 42);
+  color: white;
+}
+
+.button:active {
+  background-color: #00ff08;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.x {
+  height: 100px;
+  width: 150px;
+  margin: 10px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <img src="./Assets/icon.jpg" class="w3-bar-item w3-button w3-wide logo">
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <button class="tablinks w3-bar-item w3-button" onclick="openCity(event, 'Play')" id="defaultOpen"><i class="fa fa-play"></i> Play</button>
+      <button class="tablinks w3-bar-item w3-button" onclick="openCity(event, 'About')"><i class="fa fa-exclamation"></i> About</button>
+      <button class="tablinks w3-bar-item w3-button" onclick="openCity(event, 'Help')"><i class="fa fa-question"></i> Help</button>
+      <button class="tablinks w3-bar-item w3-button" onclick="openCity(event, 'Contact')"><i class="fa fa-user"></i> Contact</button>
+      <button class="tablinks w3-bar-item w3-button" onclick="openCity(event, 'Download')"><i class="fa fa-download"></i> Download</button>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+
+<div id="Play" class="tabcontent">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small">Redon's Nightmare</span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Redon's Nightmare</span><br>
+    <span class="w3-large">Play Redon's Nightmare & Beat As Many Boss As You Can !!!</span>
+    <p><button onclick="document.getElementById('play').style.display='block'" class="button"><span>Start Playing </span></button></p> 
+  </div> 
+
+<!-- Menu Modal -->
+<div id="play" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-black w3-display-container">
+      <span onclick="document.getElementById('play').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+      <h1 class="center">Level 1</h1>
+    </div>
+    <div class="center w3-container">
+      <a href="./Levels/level_1_medium.html">
+        <button class="button x"><b>Medium</b></button>
+      </a>
+      <a href="./Levels/level_1_hard.html">
+        <button class="button x"><b>Hard</b></button>
+      </a>
+    </div>
+    <div class="center w3-container w3-black">
+      <h1>Level 2</h1>
+    </div>
+    <div class="center w3-container">
+      <a href="./Levels/level_2_medium.html">
+        <button class="button x"><b>Medium</b></button>
+      </a>
+      <a href="./Levels/level_2_hard.html">
+        <button class="button x"><b>Hard</b></button>
+      </a>
+    </div>
+  </div>
+</div>  
+
+</div>
+
+<div id="About" class="tabcontent">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small">About This Game</span><br>
+    <span class="w3-large">
+      Welcome to Redon's Nightmare <br>
+      This is The first Project of CAC that has been published on the internet <br>
+      CAC is the name of our team who worked so hard on this game to bring joy to our players <br>
+      We inspire the paintings and story of this game from famous French artist Odilon Redon <br>
+      We hope that our day and night efforts on this game will finally bear fruit and we will be <br>
+      able to create happy moments for you with the special game-making style of the CAC team. <br>
+      Enjoy
+    </span>
+    <!-- <p><button class="button"><span>Start Playing</span></button></p>  -->
+   </div> 
+</div>
+
+<div id="Help" class="tabcontent">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small">Help</span><br>
+    <span class="w3-large">
+      <h3>How to start :</h3>
+      After hitting play, the game will ask you for the level of difficulty and after that the game will began <br>
+      <h3>Controlls :</h3>
+      You can move by mouse cursor and shoot by spacebar on keyboard <br>
+    </span>
+    <!-- <p><button class="button"><span>Start Playing</span></button></p> -->
+    </div> 
+</div>
+
+<div id="Contact" class="tabcontent">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small">Contact Us</span><br>
+    <span class="w3-large">Follow us to support our work and learn about the latest updates and new games</span><br>
+    <span class="w3-xlarge">Email : cntrol.alt.create@gmail.com</span><br>
+    <span class="w3-xlarge">Website : Soon...</span><br>
+    <span class="w3-xlarge">YouTube : Soon...</span><br>
+    <span class="w3-xlarge">Instagram : Soon...</span>
+  </div> 
+</div>
+
+<div id="Download" class="tabcontent">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small">Play Offline</span><br>
+    <span class="w3-large">Do You Want to Play Redon's Nightmare Without Internet ?</span><br>
+    <span class="w3-large">Download Each Level With Every Difficulty You Like On Your PC For Free Right Now !</span>
+    <a href="./Levels/Redon's Nightmare.rar" download>
+      <p><button class="button"><span>Download Now</span></button></p> 
+    </a> 
+  </div> 
+</div>
+
+  <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
+    <p>powered by CAC</p>
+  </div>
+</header>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
+<script>
+// tabs  
+  function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  document.getElementById("defaultOpen").click();
+  </script>
+
+</body>
+</html>
